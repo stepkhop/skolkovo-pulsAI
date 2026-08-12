@@ -91,13 +91,13 @@ api_keys:
 Запуск сбора всех метрик за указанный год:
 
 ```bash
-python main.py --year 2026
+python main.py --collect --all-years
 ```
 
 Сбор только одной метрики:
 
 ```bash
-python main.py --year 2026 --metric 1
+python main.py --collect 2025
 ```
 
 ---
@@ -105,7 +105,7 @@ python main.py --year 2026 --metric 1
 ## Запуск дашборда
 
 ```bash
-streamlit run ui/pages/dashboard.py
+python main.py --dashboard
 ```
 
 Убедитесь, что база данных `data/pulse_ai.db` создана перед запуском дашборда
