@@ -1,0 +1,69 @@
+app:
+  name: "Pulse AI Dashboard"
+  version: "1.0.0"
+  data_dir: "data"
+  logs_dir: "logs"
+  db_path: "data/pulse_ai.db"
+  csv_export_dir: "data"
+
+api_keys:
+  openalex: "LyQnGyCptny6gLd4Hwslk9"
+  semantic_scholar: ""
+
+metric_1:
+  name: "Метрика 1: Число топ-публикаций РФ по ИИ"
+  description: "Статьи с российской аффилиацией в топовых ИИ-конференциях и журналах (NeurIPS, ICML, CVPR, ACL, Nature и др.)"
+  enabled: true
+  top_venues:
+    conferences:
+      - "NeurIPS"
+      - "ICML"
+      - "ICLR"
+      - "CVPR"
+      - "ICCV"
+      - "ECCV"
+      - "ACL"
+      - "EMNLP"
+      - "AAAI"
+      - "IJCAI"
+    journals:
+      - "Nature Machine Intelligence"
+      - "Journal of Machine Learning Research"
+      - "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+  openalex:
+    base_url: "https://api.openalex.org"
+    per_page: 200
+    max_retries: 3
+    sleep_between_calls: 0.1
+    email: "pulse-ai@example.com"
+
+metric_2:
+  name: "Метрика 2: Квалифицированные ИИ-исследователи"
+  description: "Число специалистов, ведущих исследовательскую работу в области ИИ"
+  enabled: true
+  unit: "чел."
+
+metric_3:
+  name: "Метрика 3: ЕГЭ 81+ и олимпиадники"
+  description: "Выпускники с высокими баллами по математике/информатике плюс призёры профильных олимпиад"
+  enabled: true
+  unit: "чел."
+
+metric_4:
+  name: "Метрика 4: Доля исследователей до 39 лет"
+  description: "Возрастная структура исследовательских кадров страны"
+  enabled: true
+  unit: "%"
+
+metric_5:
+  name: "Метрика 5: Student researchers в ИИ-центрах"
+  description: "Студенты-исследователи в Иннополисе, МФТИ, ИТМО, ВШЭ, Сколтехе"
+  enabled: true
+  unit: "чел."
+
+collection:
+  default_year: 2026
+  years_to_collect: [2022, 2023, 2024, 2025, 2026]
+  request_timeout: 30
+  max_retries: 3
+  retry_backoff_base: 2
