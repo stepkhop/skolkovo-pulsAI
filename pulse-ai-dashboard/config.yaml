@@ -9,6 +9,9 @@ app:
 api_keys:
   openalex: "LyQnGyCptny6gLd4Hwslk9"
   semantic_scholar: ""
+  
+debug: true
+app_title: "Skolkova PulsAI"
 
 metric_1:
   name: "Метрика 1: Число топ-публикаций РФ по ИИ"
